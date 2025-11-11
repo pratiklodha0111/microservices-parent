@@ -18,7 +18,7 @@ public class SecurityConfig {
 
                 // ✅ modern request authorization syntax
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/eureka/**").permitAll() // allow Eureka clients
+                        .requestMatchers("/eureka/**","/api/product/h2-console/**").permitAll() // allow Eureka clients
                         .anyRequest().authenticated()              // require auth for dashboard or others
                 )
 
